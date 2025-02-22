@@ -1,6 +1,9 @@
 # Learn String Manipulation by Building a Cipher
 
-def vigenere(message, key, direction=1):
+text = 'mrttaqrhknsw ih puggrur'
+custom_key = 'happycoding'
+
+def vigenere(message: str, key: str, direction: int = 1) -> str:
     """
     Encrypts or decrypts a message using the Vigenère cipher.
 
