@@ -6,6 +6,9 @@
 
 Greetings, intrepid coder! You’ve stumbled upon a mystical collection of freeCodeCamp solution files. This repository is where **bugs come to retire** and **code solutions come to celebrate** their glorious achievements.
 
+![GitHub repo size](https://img.shields.io/github/repo-size/StilgarBF/freecodecamp)
+![GitHub contributors](https://img.shields.io/github/contributors/StilgarBF/freecodecamp)
+
 ## What's Inside?
 
 - **HTML & CSS Quests**  
