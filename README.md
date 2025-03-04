@@ -45,6 +45,13 @@ Greetings, intrepid coder! You’ve stumbled upon a mystical collection of freeC
 - **Help Fellow Adventurers**: Use these as a compass if you find yourself lost in the coding wilderness.  
 - **Track Progress**: It’s a trophy room to celebrate solved challenges and new knowledge gained.
 
+## My Code Wars Arena 🏆
+
+When I’m not conquering freeCodeCamp, I’m battling through coding challenges on Codewars.  
+Check out my profile and see how many katas I’ve conquered!  
+
+[![Codewars](https://www.codewars.com/users/StilgarBF/badges/micro)](https://www.codewars.com/users/StilgarBF/)  
+
 ## Contributing
 
 1. **please don't**  
