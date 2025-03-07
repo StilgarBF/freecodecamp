@@ -1,5 +1,5 @@
 class R2Vector:
-    def __init__(self, *, x, y):
+    def __init__(self, *, x: float, y: float):
         self.x = x
         self.y = y
 
@@ -7,27 +7,27 @@ class R2Vector:
         """Calculate the Euclidean norm of the vector."""
         return sum(val**2 for val in vars(self).values())**0.5
 
-    def __str__(self):
+    def __str__(self) -> str:
         return str(tuple(getattr(self, i) for i in vars(self)))
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         arg_list = [f'{key}={val}' for key, val in vars(self).items()]
         args = ', '.join(arg_list)
         return f'{self.__class__.__name__}({args})'
 
-    def __add__(self, other):
+    def __add__(self, other: 'R2Vector') -> 'R2Vector':
         if type(self) != type(other):
             return NotImplemented
         kwargs = {i: getattr(self, i) + getattr(other, i) for i in vars(self)}
         return self.__class__(**kwargs)
 
-    def __sub__(self, other):
+    def __sub__(self, other: 'R2Vector') -> 'R2Vector':
         if type(self) != type(other):
             return NotImplemented
         kwargs = {i: getattr(self, i) - getattr(other, i) for i in vars(self)}
         return self.__class__(**kwargs)
 
-    def __mul__(self, other):
+    def __mul__(self, other: 'R2Vector') -> float:
         if type(other) in (int, float):
             kwargs = {i: getattr(self, i) * other for i in vars(self)}
             return self.__class__(**kwargs)        
@@ -36,32 +36,32 @@ class R2Vector:
             return sum(args)            
         return NotImplemented
 
-    def __eq__(self, other):
+    def __eq__(self, other: 'R2Vector') -> bool:
         if type(self) != type(other):
             return NotImplemented
         return all(getattr(self, i) == getattr(other, i) for i in vars(self))
         
-    def __ne__(self, other):
+    def __ne__(self, other: 'R2Vector') -> bool:
         return not self == other
 
-    def __lt__(self, other):
+    def __lt__(self, other: 'R2Vector') -> bool:
         if type(self) != type(other):
             return NotImplemented
         return self.norm() < other.norm()
 
-    def __gt__(self, other):
+    def __gt__(self, other: 'R2Vector') -> bool:
         if type(self) != type(other):
             return NotImplemented
         return self.norm() > other.norm()
 
-    def __le__(self, other):
+    def __le__(self, other: 'R2Vector') -> bool:
         return not self > other
 
-    def __ge__(self, other):
+    def __ge__(self, other: 'R2Vector') -> bool:
         return not self < other
 
 class R3Vector(R2Vector):
-    def __init__(self, *, x, y, z):
+    def __init__(self, *, x: float, y: float, z: float):
         super().__init__(x=x, y=y)
         self.z = z
 
@@ -69,7 +69,7 @@ class R3Vector(R2Vector):
         """Calculate the Euclidean norm of the vector."""
         return (self.x**2 + self.y**2 + self.z**2)**0.5
         
-    def cross(self, other):
+    def cross(self, other: 'R3Vector') -> 'R3Vector':
         if type(self) != type(other):
             return NotImplemented
         kwargs = {
